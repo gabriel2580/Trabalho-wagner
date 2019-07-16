@@ -40,18 +40,66 @@ public class Mascaras {
     }
 
     public static String formataTelefone(String telefone) {
+        char[] telefoneArray = telefone.toCharArray();
+        
         String telefoneFormatado = "";
         
-        String bloco1 = telefone.substring(0, 0);
-        String bloco2 = telefone.substring(0, 2);
-        String bloco3 = telefone.substring(2, 7); 
-        String bloco4 = telefone.substring(7, 11);
-        
-        
-        telefoneFormatado = bloco1 + "(" + bloco2 +") "+ bloco 3 + "-"+ bloco4;
+        for (int i = 0; i < telefoneArray.length; i++) {
+            
+            if(i == 0) {
+                telefoneFormatado = telefoneFormatado + "(";
+            }
+            
+            telefoneFormatado = telefoneFormatado + telefoneArray[i];
+                       
+            if (i == 1) {
+                telefoneFormatado = telefoneFormatado + ")";
+            }
+            if (i == 6) {
+                telefoneFormatado = telefoneFormatado + "-";
+            }
+        }
  
     return telefoneFormatado;
     
     }
 
+    public static String formataPlaca (String placa) {
+        String placaFormata = "";
+        
+        String placaFormatado = placa.substring(0, 3) + "-" + placa.substring(3, 7);
+           
+        return placaFormatado.toUpperCase();
+    }
+    
+    public static int letrasMaiusculas (String letras){
+        int contLetraMaiuscula = 0;
+        char[] palavraArray = letras.toCharArray();
+        
+        
+        for(char c : palavraArray ) {
+            
+            if(Character.isUpperCase(c)) {
+                contLetraMaiuscula++;
+            }
+            
+        }
+        return contLetraMaiuscula;
+                            
+    }
+    
+    public static int letrasMinusculas (String letras){
+        int contLetraMinuscula = 0;
+        char[] palavraArray = letras.toCharArray();
+        
+        
+        for(char c : palavraArray ) {
+            
+            if(Character.isLowerCase(c)) {
+                contLetraMinuscula++;
+            }
+            
+        }
+        return contLetraMinuscula;
+    }
 }

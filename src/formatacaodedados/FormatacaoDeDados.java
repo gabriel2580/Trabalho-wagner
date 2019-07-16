@@ -13,8 +13,17 @@ public class FormatacaoDeDados {
         String cepFormatado = Mascaras.formataCep("88352490");
         System.out.println(cepFormatado);
         
-        String telefoneFormatdo = Mascaras.formataTelefone("47996859208");
+        String telefoneFormatado = Mascaras.formataTelefone("47996859208");
         System.out.println(telefoneFormatado);
+        
+        String placaFormatado = Mascaras.formataPlaca("ABC2357");
+        System.out.println(placaFormatado);
+        
+        int letrasMaiusculas = Mascaras.letrasMaiusculas("GiydOLyuRN");
+        System.out.println("Letras Maiúsculas: "+letrasMaiusculas);
+        
+        int letrasMinusculas = Mascaras.letrasMinusculas("GiydOLyuRN");
+        System.out.println("Letras Minúsculas: "+letrasMinusculas);
     }
 
 }
